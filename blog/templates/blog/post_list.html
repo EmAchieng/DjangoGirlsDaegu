@@ -5,19 +5,18 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">G-Books</a></h1>
+            <h1><a href="/">G-Books </a></h1>
         </div>
+        {% for post in posts %}
 
         <div>
-            <p>published: 14.02.2019, 12:14</p>
-            <h2><a href="">Who are we? </a></h2>
-            <p>We are Foreign Students in Gachon University who want to share knowledge. We have created this book platform to sell and distribute books at a cheaper price. This is a great chance to share your books and meet amazing people. </p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
 
-        <div>
-            <p>published: 14.02.2019, 12:14</p>
-            <h2><a href="">Do you want to share your books? </a></h2>
-            <p>Join us and let us have a fantastic time of sharing! </p>
-        </div>
+        {% endfor %}
+
+        
     </body>
 </html>
